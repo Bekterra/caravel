@@ -1680,8 +1680,8 @@ class MapboxViz(BaseViz):
     fieldsets = ({
         'label': None,
         'fields': (
-            'longitude',
-            'latitude',
+            ('longitude', 'latitude'),
+            'mapbox_style',
         )
     },)
 
@@ -1711,7 +1711,11 @@ class MapboxViz(BaseViz):
             for lon, lat in zip(df[fd.get('longitude')], df[fd.get('latitude')])
           ]
         }
-        return geo_json
+
+        return {
+            "geoJSON": geo_json,
+            "mapStyle": fd.get("mapbox_style")
+        }
 
 
 viz_types_list = [
