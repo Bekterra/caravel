@@ -1703,6 +1703,7 @@ class MapboxViz(BaseViz):
         'fields': (
             'mapbox_style',
             'global_opacity',
+            'mapbox_color',
         )
     }, {
         'label': 'Viewport',
@@ -1832,6 +1833,7 @@ class MapboxViz(BaseViz):
             "viewportZoom": fd.get("viewport_zoom"),
             "renderWhileDragging": fd.get("render_while_dragging"),
             "tooltip": fd.get("rich_tooltip"),
+            "color": fd.get("mapbox_color"),
         }
 
 
